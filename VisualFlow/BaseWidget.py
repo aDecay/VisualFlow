@@ -10,8 +10,9 @@ class BaseWidget(QWidget):
         self.tab1 = QWidget()
         self.tab2 = QWidget()
 
-        self.tabs.addTab(self.tab1, "UI")
-        self.tabs.addTab(self.tab2, "Code")
+        self.tabs.setTabPosition(QTabWidget.South)
+        self.tabs.addTab(self.tab1, 'UI')
+        self.tabs.addTab(self.tab2, 'Code')
 
         self.layout.addWidget(self.tabs)
         self.setLayout(self.layout)
