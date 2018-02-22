@@ -1,14 +1,15 @@
-import os
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget
 from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
+
+import BaseWidget
 
 class VisualFlow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        #self.form_widget =
-        #self.setCentralWidget(self.form_widget)
+        self.form_widget = BaseWidget.BaseWidget()
+        self.setCentralWidget(self.form_widget)
 
         self.init_ui()
 
