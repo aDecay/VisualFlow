@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QHBoxLayout, QWidget, QTabWidget
 
 class BaseWidget(QWidget):
     def __init__(self):
