@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QDockWidget, QLabel
 from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
+from PyQt5.QtCore import *
 
 import BaseWidget
 
@@ -14,6 +15,7 @@ class VisualFlow(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
+        self.init_dock()
         bar = self.menuBar()
         file = bar.addMenu('File')
         edit = bar.addMenu('Edit')
@@ -55,7 +57,14 @@ class VisualFlow(QMainWindow):
         quit_action.triggered.connect(self.quit_trigger)
         file.triggered.connect(self.respond)
 
-        self.show()
+        self.showMaximized()
+
+    def init_dock(self):
+        self.objects = QDockWidget('Objects')
+        self.properties = QDockWidget('Properties')
+
+        self.addDockWidget(Qt.LeftDockWidgetArea, self.objects)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.properties)
 
     def quit_trigger(self):
         qApp.quit()
