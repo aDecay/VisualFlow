@@ -1,9 +1,13 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QDockWidget, QLabel
+
+from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QDockWidget, QLabel, QFrame
 from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
 from PyQt5.QtCore import *
 
 import BaseWidget
+from PyQt5.uic.properties import QtWidgets
+
 
 class VisualFlow(QMainWindow):
     def __init__(self):
@@ -61,6 +65,16 @@ class VisualFlow(QMainWindow):
 
     def init_dock(self):
         self.objects = QDockWidget('Objects')
+
+        self.imageLabel = QLabel()
+        self.image = QImage("test.jpg")
+        self.imageLabel.setPixmap(QPixmap.fromImage(self.image))
+
+        self.v_box = QVBoxLayout()
+        self.v_box.addWidget(self.imageLabel)
+        self.objects.setLayout(self.v_box)
+
+
         self.properties = QDockWidget('Properties')
 
         self.addDockWidget(Qt.LeftDockWidgetArea, self.objects)
