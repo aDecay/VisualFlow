@@ -1,4 +1,8 @@
-from PyQt5.QtWidgets import QHBoxLayout, QWidget, QTabWidget
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+
+import UITab
 
 class BaseWidget(QWidget):
     def __init__(self):
@@ -7,8 +11,8 @@ class BaseWidget(QWidget):
         self.layout = QHBoxLayout(self)
 
         self.tabs = QTabWidget()
-        self.tab1 = QWidget()
-        self.tab2 = QWidget()
+        self.tab1 = UITab.UITab(1,10)
+        self.tab2 = QLabel("Hello World!")
 
         self.tabs.setTabPosition(QTabWidget.South)
         self.tabs.addTab(self.tab1, 'UI')
