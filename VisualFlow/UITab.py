@@ -19,6 +19,4 @@ class UITab(QTableWidget):
         super().__init__(r, c)
         self.horizontalHeader().setVisible(False)
         self.verticalHeader().setVisible(False)
-        self.verticalHeader().setDefaultSectionSize(500)
-
-        self.show()
+        #self.verticalHeader().setDefaultSectionSize(500)

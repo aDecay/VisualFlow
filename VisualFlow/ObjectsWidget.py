@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
 class ObjectsWidget(QWidget):
-    def __init__(self):
+    def __init__(self, baseWidget):
         super(ObjectsWidget, self).__init__()
 
         self.imageLabel = QLabel()

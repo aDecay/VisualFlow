@@ -9,7 +9,6 @@ import BaseWidget
 import ObjectsWidget
 from PyQt5.uic.properties import QtWidgets
 
-
 class VisualFlow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -67,7 +66,7 @@ class VisualFlow(QMainWindow):
     def init_dock(self):
         self.objects = QDockWidget('Objects')
 
-        self.objects.setWidget(ObjectsWidget.ObjectsWidget())
+        self.objects.setWidget(ObjectsWidget.ObjectsWidget(self.form_widget))
 
         self.properties = QDockWidget('Properties')
 
