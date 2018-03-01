@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 
 import BaseWidget
 import ObjectsWidget
-from VisualFlow import Soksung
+import Soksung
 
 
 class VisualFlow(QMainWindow):
