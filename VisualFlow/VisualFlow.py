@@ -1,13 +1,13 @@
 import sys
 
-from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QDockWidget, QLabel, QFrame
-from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDockWidget
+from PyQt5.QtWidgets import QAction, qApp
 from PyQt5.QtCore import *
 
 import BaseWidget
 import ObjectsWidget
-from PyQt5.uic.properties import QtWidgets
+from VisualFlow import Soksung
+
 
 class VisualFlow(QMainWindow):
     def __init__(self):
@@ -69,6 +69,8 @@ class VisualFlow(QMainWindow):
         self.objects.setWidget(ObjectsWidget.ObjectsWidget(self.form_widget))
 
         self.properties = QDockWidget('Properties')
+
+        self.properties.setWidget(Soksung.Soksung())
 
         self.addDockWidget(Qt.LeftDockWidgetArea, self.objects)
         self.addDockWidget(Qt.RightDockWidgetArea, self.properties)
